@@ -1,0 +1,863 @@
+/* =============================================================
+   BRYSAM BOTANICALS — STYLESHEET
+   Structure of this file:
+   1. Variables & resets
+   2. Base typography
+   3. Layout helpers
+   4. Navbar
+   5. Hero
+   6. Product (Morié)
+   7. Benefits
+   8. Our Story
+   9. Journal
+   10. Newsletter
+   11. Footer
+   12. Scroll animation classes
+   13. Responsive breakpoints (tablet + mobile)
+============================================================= */
+
+/* -------------------------------------------------------------
+   1. VARIABLES & RESETS
+   All brand colours live here. Change a hex value once and it
+   updates everywhere the variable is used.
+---------------------------------------------------------------- */
+:root {
+  --forest-green: #1f3a2e;
+  --gold: #c8963c;
+  --cream: #f6f1e4;
+  --white: #ffffff;
+  --dark: #16201a;
+
+  /* derived tones used for subtle backgrounds/borders */
+  --forest-green-soft: #294a3a;
+  --line: rgba(22, 32, 26, 0.1);
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+
+  --max-width: 1180px;
+  --radius: 4px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--dark);
+  background-image:
+    linear-gradient(rgba(240, 235, 221, 0.82), rgba(250, 242, 224, 0.82)),
+    url("images/moringa-leaves.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  line-height: 1.6;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button, input {
+  font-family: inherit;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* -------------------------------------------------------------
+   2. BASE TYPOGRAPHY
+---------------------------------------------------------------- */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--forest-green);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.section-kicker {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  max-width: 26ch;
+}
+
+/* -------------------------------------------------------------
+   3. LAYOUT HELPERS
+---------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.9rem;
+  border-radius: var(--radius);
+  font-size: 0.98rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn--gold {
+  background: var(--gold);
+  color: var(--dark);
+}
+.btn--gold:hover {
+  background: #b8863010;
+  background: #b0812f;
+  transform: translateY(-2px);
+}
+
+.btn--dark {
+  background: var(--forest-green);
+  color: var(--white);
+}
+.btn--dark:hover {
+  background: var(--dark);
+  transform: translateY(-2px);
+}
+
+.btn--outline {
+  background: transparent;
+  border-color: var(--forest-green);
+  color: var(--forest-green);
+}
+.btn--outline:hover {
+  background: var(--forest-green);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+section {
+  padding: 6.5rem 1.5rem;
+}
+
+/* -------------------------------------------------------------
+   4. NAVBAR
+---------------------------------------------------------------- */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.is-scrolled {
+  border-bottom-color: var(--line);
+  box-shadow: 0 8px 24px rgba(22, 32, 26, 0.05);
+}
+
+.navbar__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--forest-green);
+}
+
+.navbar__logo-mark {
+  width: 28px;
+  height: 28px;
+  color: var(--forest-green);
+}
+
+.navbar__logo-text {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+}
+
+.navbar__logo-text em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 0.95rem;
+}
+
+.navbar__links a {
+  position: relative;
+  padding: 0.2rem 0;
+  color: var(--dark);
+}
+
+.navbar__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.25s ease;
+}
+
+.navbar__links a:hover::after {
+  width: 100%;
+}
+
+.navbar__cta {
+  background: var(--forest-green);
+  color: var(--white);
+  padding: 0.65rem 1.3rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background 0.25s ease;
+}
+.navbar__cta:hover {
+  background: var(--dark);
+}
+
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navbar__toggle span {
+  display: block;
+  height: 1.5px;
+  width: 100%;
+  background: var(--forest-green);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar__toggle.is-active span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.navbar__toggle.is-active span:nth-child(2) {
+  opacity: 0;
+}
+.navbar__toggle.is-active span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* -------------------------------------------------------------
+   5. HERO
+---------------------------------------------------------------- */
+.hero {
+  padding-top: 9.5rem;
+  background: transparent;
+}
+
+.hero__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero__kicker {
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 1.1rem;
+  font-size: 1rem;
+}
+
+.hero__title {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  max-width: 14ch;
+  margin-bottom: 1.4rem;
+}
+
+.hero__subtitle {
+  max-width: 42ch;
+  font-size: 1.1rem;
+  color: var(--forest-green-soft);
+  margin-bottom: 2.2rem;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero__art {
+  display: flex;
+  justify-content: center;
+}
+
+.hero__illustration {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* -------------------------------------------------------------
+   6. PRODUCT — MORIÉ
+---------------------------------------------------------------- */
+.product__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.product__illustration {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 150px;
+  margin: 0 auto;
+  transition: transform 0.4s ease;
+}
+
+.product__art:hover .product__illustration {
+  transform: scale(1.03);
+}
+
+.product__desc {
+  max-width: 46ch;
+  margin-bottom: 1.6rem;
+  color: var(--forest-green-soft);
+}
+
+.product__list {
+  margin-bottom: 2.2rem;
+}
+
+.product__list li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-bottom: 0.6rem;
+  color: var(--dark);
+}
+
+.product__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* -------------------------------------------------------------
+   7. BENEFITS
+---------------------------------------------------------------- */
+.benefits {
+  background: var(--transparent);
+}
+
+.benefits__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.benefits__header {
+  max-width: 50ch;
+  margin-bottom: 3.5rem;
+}
+
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem 2rem;
+}
+
+.benefit-card {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.benefit-card__icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1.2rem;
+}
+
+.benefit-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+
+.benefit-card p {
+  color: var(--forest-green-soft);
+  font-size: 0.98rem;
+  max-width: 32ch;
+}
+
+/* -------------------------------------------------------------
+   8. OUR STORY
+---------------------------------------------------------------- */
+.story {
+  background: var(--transparent);
+}
+
+.story__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.story__illustration {
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.story__desc {
+  max-width: 50ch;
+  color: var(--forest-green-soft);
+  margin-bottom: 1.2rem;
+}
+
+.story .btn {
+  margin-top: 0.8rem;
+}
+
+/* -------------------------------------------------------------
+   9. JOURNAL
+---------------------------------------------------------------- */
+.journal {
+  background: transparent;
+}
+
+
+.journal__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.journal__header {
+  max-width: 50ch;
+  margin-bottom: 3rem;
+}
+
+.journal__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.journal-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journal-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(22, 32, 26, 0.08);
+}
+
+.journal-card__image {
+  overflow: hidden;
+}
+
+.journal-card__image svg {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease;
+}
+
+.journal-card:hover .journal-card__image svg {
+  transform: scale(1.06);
+}
+
+.journal-card__category {
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 1.3rem 1.3rem 0.5rem;
+}
+
+.journal-card__title {
+  font-size: 1.2rem;
+  margin: 0 1.3rem 0.6rem;
+}
+
+.journal-card__desc {
+  font-size: 0.95rem;
+  color: var(--forest-green-soft);
+  margin: 0 1.3rem 1.1rem;
+}
+
+.journal-card__link {
+  display: block;
+  margin: 0 1.3rem 1.3rem;
+  color: var(--forest-green);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.25s ease;
+}
+
+.journal-card__link:hover {
+  color: var(--gold);
+}
+
+/* -------------------------------------------------------------
+   10. NEWSLETTER
+---------------------------------------------------------------- */
+.newsletter {
+  background: var(--forest-green);
+  color: var(--cream);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.newsletter__inner {
+  max-width: 560px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.newsletter__art {
+  position: absolute;
+  top: -60px;
+  right: -420px;
+  width: 420px;
+  opacity: 0.5;
+}
+
+.newsletter__title {
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.newsletter__text {
+  color: rgba(246, 241, 228, 0.85);
+  margin-bottom: 2.3rem;
+  max-width: 42ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter__form {
+  display: flex;
+  gap: 0.75rem;
+  background: rgba(246, 241, 228, 0.08);
+  border: 1px solid rgba(246, 241, 228, 0.25);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+}
+
+.newsletter__form input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.7rem 0.9rem;
+  color: var(--white);
+  font-size: 0.98rem;
+}
+
+.newsletter__form input::placeholder {
+  color: rgba(246, 241, 228, 0.6);
+}
+
+.newsletter__form input:focus {
+  outline: none;
+}
+
+.newsletter__note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--gold);
+  min-height: 1.2em;
+}
+
+/* -------------------------------------------------------------
+   11. FOOTER
+---------------------------------------------------------------- */
+.footer {
+  background: var(--dark);
+  color: var(--cream);
+  padding: 4rem 1.5rem 0;
+}
+
+.footer__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(246, 241, 228, 0.12);
+}
+
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--white);
+}
+
+.footer__tagline {
+  margin-top: 0.6rem;
+  color: rgba(246, 241, 228, 0.65);
+  font-size: 0.95rem;
+}
+
+.footer__links,
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+}
+
+.footer__links a,
+.footer__social a {
+  color: rgba(246, 241, 228, 0.75);
+  transition: color 0.25s ease;
+  width: fit-content;
+}
+
+.footer__links a:hover,
+.footer__social a:hover {
+  color: var(--gold);
+}
+
+.footer__bottom {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 0;
+  font-size: 0.85rem;
+  color: rgba(246, 241, 228, 0.5);
+  text-align: center;
+}
+
+/* -------------------------------------------------------------
+   12. SCROLL ANIMATION CLASSES
+   Controlled by script.js via IntersectionObserver.
+   Elements start slightly lower + transparent, then settle in.
+---------------------------------------------------------------- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------------------------------------------------
+   13. RESPONSIVE BREAKPOINTS
+---------------------------------------------------------------- */
+
+/* ---- TABLET (max 1024px) ---- */
+@media (max-width: 1024px) {
+  section {
+    padding: 5rem 1.5rem;
+  }
+
+  .navbar__links {
+    gap: 1.3rem;
+    font-size: 0.9rem;
+  }
+
+  .hero__inner,
+  .product__inner,
+  .story__inner {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .hero__inner {
+    padding-top: 1rem;
+  }
+
+  .hero__art,
+  .product__art,
+  .story__art {
+    order: -1;
+  }
+
+  .hero__illustration,
+  .product__illustration,
+  .story__illustration {
+    max-width: 320px;
+  }
+
+  .benefits__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .journal__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---- MOBILE (max 640px) ---- */
+@media (max-width: 640px) {
+  section {
+    padding: 4rem 1.25rem;
+  }
+
+  .navbar__inner {
+    padding: 1rem 1.25rem;
+  }
+
+  .navbar__cta {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__links {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 0.5rem 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--line);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+  }
+
+  .navbar__links.is-open {
+    max-height: 400px;
+    opacity: 1;
+  }
+
+  .navbar__links a {
+    width: 100%;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 1rem;
+  }
+
+  .navbar__links a:last-child {
+    border-bottom: none;
+  }
+
+  .hero {
+    padding-top: 8rem;
+  }
+
+  .hero__title {
+    font-size: 2.3rem;
+    max-width: none;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero__actions .btn {
+    text-align: center;
+  }
+
+  .benefits__grid,
+  .journal__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .newsletter__form {
+    flex-direction: column;
+  }
+
+  .newsletter__form .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer__brand {
+    grid-column: auto;
+  }
+}

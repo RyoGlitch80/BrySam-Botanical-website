@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrySam Botanicals — Morié, a botanical infusion</title>
+    <meta
+      name="description"
+      content="BrySam Botanicals is a modern botanical wellness brand from Nigeria, home to Morié — a moringa infusion brewed for everyday nourishment."
+    />
+
+    <!-- Google Fonts: Fraunces for display headings, Work Sans for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- =========================================================
+       NAVIGATION BAR
+       Fixed top navigation with logo, links and mobile menu toggle
+  ========================================================== -->
+    <header class="navbar" id="navbar">
+      <div class="navbar__inner">
+        <a href="#home" class="navbar__logo">
+          <span class="navbar__logo-mark" aria-hidden="true">
+            <!-- small leaf mark used as the brand symbol -->
+            <svg
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 4C20 4 32 10 32 21C32 29.2843 26.6274 34 20 34C13.3726 34 8 29.2843 8 21C8 10 20 4 20 4Z"
+                stroke="currentColor"
+                stroke-width="1.6"
+              />
+              <path d="M20 8V32" stroke="currentColor" stroke-width="1.4" />
+            </svg>
+          </span>
+          <span class="navbar__logo-text">BrySam <em>Botanicals</em></span>
+        </a>
+
+        <nav class="navbar__links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#morie">Morié</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#story">Our Story</a>
+          <a href="#journal">Journal</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#morie" class="navbar__cta">Discover Morié</a>
+
+        <!-- Mobile hamburger button, animates into a close icon via CSS -->
+        <button
+          class="navbar__toggle"
+          id="navToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- =========================================================
+       HERO SECTION
+       First thing a visitor sees: brand statement + botanical artwork
+  ========================================================== -->
+    <section class="hero" id="home">
+      <div class="hero__inner">
+        <div class="hero__text fade-up">
+          <p class="hero__kicker">Botanical wellness, brewed in Nigeria</p>
+          <h1 class="hero__title">
+            Nature, steeped&nbsp;in&nbsp;every&nbsp;cup.
+          </h1>
+          <p class="hero__subtitle">
+            Morié is a moringa infusion made for slow mornings and quiet
+            afternoons — a small ritual of green, growing things, brewed the way
+            the earth intended.
+          </p>
+          <div class="hero__actions">
+            <a href="#morie" class="btn btn--gold">Meet Morié</a>
+            <a href="#story" class="btn btn--outline">Our Story</a>
+          </div>
+        </div>
+
+        <div class="hero__art fade-up" aria-hidden="true">
+          <!-- Simple line-art botanical illustration standing in for hero photography -->
+       
+  
+            <circle cx="240" cy="280" r="220" fill="var(--cream)" />
+            <g
+              stroke="var(--forest-green)"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+            >
+              <path
+                d="M240 460C240 460 210 340 240 230C270 120 240 60 240 60"
+              />
+              <path d="M240 230C240 230 180 210 150 150" />
+              <path d="M240 230C240 230 300 210 330 150" />
+              <path d="M240 320C240 320 175 300 140 250" />
+              <path d="M240 320C240 320 305 300 340 250" />
+              <path d="M240 400C240 400 190 385 165 340" />
+              <path d="M240 400C240 400 290 385 315 340" />
+            </g>
+            <g fill="var(--gold)">
+              <circle cx="150" cy="150" r="5" />
+              <circle cx="330" cy="150" r="5" />
+              <circle cx="140" cy="250" r="5" />
+              <circle cx="340" cy="250" r="5" />
+              <circle cx="165" cy="340" r="5" />
+              <circle cx="315" cy="340" r="5" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       PRODUCT SECTION — MORIÉ
+       Introduces the flagship product
+  ========================================================== -->
+    <section class="product" id="morie">
+      <div class="product__inner">
+        <div class="product__art fade-up" aria-hidden="true">
+          <div class="product__art fade-up">
+  <img
+    src="images/morie-powder.jpg"
+    alt="Morié Powder"
+    class="product__illustration"
+  >
+</div>
+            <rect
+              x="30"
+              y="30"
+              width="360"
+              height="460"
+              rx="6"
+              fill="var(--white)"
+              stroke="var(--dark)"
+              stroke-opacity="0.08"
+            />
+            <!-- jar -->
+            <rect
+              x="150"
+              y="140"
+              width="120"
+              height="220"
+              rx="14"
+              fill="var(--cream)"
+              stroke="var(--forest-green)"
+              stroke-width="1.6"
+            />
+            <rect
+              x="168"
+              y="110"
+              width="84"
+              height="34"
+              rx="6"
+              fill="var(--forest-green)"
+            />
+            <rect
+              x="176"
+              y="100"
+              width="68"
+              height="16"
+              rx="4"
+              fill="var(--gold)"
+            />
+            <line
+              x1="150"
+              y1="220"
+              x2="270"
+              y2="220"
+              stroke="var(--forest-green)"
+              stroke-width="1"
+            />
+            <text
+              x="210"
+              y="260"
+              text-anchor="middle"
+              font-family="Fraunces, serif"
+              font-size="20"
+              fill="var(--forest-green)"
+            >
+              Morié
+            </text>
+            <!-- botanical sprig beside the jar -->
+            <g
+              stroke="var(--forest-green)"
+              stroke-width="1.6"
+              fill="none"
+              stroke-linecap="round"
+            >
+              <path
+                d="M300 380C300 380 292 320 310 270C328 220 320 170 320 170"
+              />
+              <path d="M310 270C310 270 275 258 258 220" />
+              <path d="M310 270C310 270 345 258 362 220" />
+              <path d="M300 330C300 330 268 320 253 285" />
+              <path d="M300 330C300 330 330 320 345 285" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="product__text fade-up">
+          <p class="section-kicker">The flagship blend</p>
+          <h2 class="section-title">Morié, our signature moringa infusion.</h2>
+          <p class="product__desc">
+            Morié is brewed from carefully sourced moringa leaves, dried and
+            blended for a smooth, grassy warmth. No shortcuts, no artificial
+            notes — just a cup that tastes like where it came from.
+          </p>
+          <ul class="product__list">
+            <li>Grown and dried close to source</li>
+            <li>Blended in small batches</li>
+            <li>Brews in minutes, no bitterness</li>
+          </ul>
+          <a href="#benefits" class="btn btn--dark">See the Benefits</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       BENEFITS SECTION
+       Grid highlighting the wellness benefits of moringa / Morié
+  ========================================================== -->
+    <section class="benefits" id="benefits">
+      <div class="benefits__inner">
+        <div class="benefits__header fade-up">
+          <p class="section-kicker">Why moringa</p>
+          <h2 class="section-title">Grown for good, brewed for balance.</h2>
+        </div>
+
+        <div class="benefits__grid">
+          <div class="benefit-card fade-up">
+            <svg
+              class="benefit-card__icon"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 6C24 6 36 14 36 26C36 34 30 40 24 40C18 40 12 34 12 26C12 14 24 6 24 6Z"
+                stroke="var(--forest-green)"
+                stroke-width="1.6"
+              />
+            </svg>
+            <h3>Rich in nutrients</h3>
+            <p>
+              Moringa leaves carry a naturally dense mix of vitamins and
+              minerals, cup after cup.
+            </p>
+          </div>
+
+          <div class="benefit-card fade-up">
+            <svg
+              class="benefit-card__icon"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="24"
+                cy="24"
+                r="14"
+                stroke="var(--forest-green)"
+                stroke-width="1.6"
+              />
+              <path
+                d="M24 16V24L30 28"
+                stroke="var(--forest-green)"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+            </svg>
+            <h3>Steady, everyday energy</h3>
+            <p>
+              A gentle lift without the crash — Morié fits mornings, afternoons,
+              and everything between.
+            </p>
+          </div>
+
+          <div class="benefit-card fade-up">
+            <svg
+              class="benefit-card__icon"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14 30C14 30 20 20 24 20C28 20 34 30 34 30"
+                stroke="var(--forest-green)"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+              <path
+                d="M24 20V10"
+                stroke="var(--forest-green)"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+            </svg>
+            <h3>Supports digestion</h3>
+            <p>
+              A warm, grassy infusion that settles easily into a daily routine
+              of care.
+            </p>
+          </div>
+
+          <div class="benefit-card fade-up">
+            <svg
+              class="benefit-card__icon"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 8L28 20H40L30 27L34 39L24 32L14 39L18 27L8 20H20L24 8Z"
+                stroke="var(--forest-green)"
+                stroke-width="1.4"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <h3>Antioxidant-rich</h3>
+            <p>
+              Naturally occurring compounds that support the body's everyday
+              resilience.
+            </p>
+          </div>
+
+          <div class="benefit-card fade-up">
+            <svg
+              class="benefit-card__icon"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 34C10 34 16 12 24 12C32 12 38 34 38 34"
+                stroke="var(--forest-green)"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+              <path
+                d="M24 12V6"
+                stroke="var(--forest-green)"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+            </svg>
+            <h3>Grown responsibly</h3>
+            <p>
+              Sourced from farms that treat the land as a long-term partner, not
+              a resource.
+            </p>
+          </div>
+
+          <div class="benefit-card fade-up">
+            <svg
+              class="benefit-card__icon"
+              viewBox="0 0 48 48"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="14"
+                y="18"
+                width="20"
+                height="18"
+                rx="3"
+                stroke="var(--forest-green)"
+                stroke-width="1.6"
+              />
+              <path
+                d="M18 18V14C18 11 20.5 9 24 9C27.5 9 30 11 30 14V18"
+                stroke="var(--forest-green)"
+                stroke-width="1.6"
+              />
+            </svg>
+            <h3>Simple, honest ingredients</h3>
+            <p>
+              What's on the label is what's in the jar — nothing hidden, nothing
+              extra.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       OUR STORY SECTION
+       Introduces the two founders behind BrySam Botanicals
+  ========================================================== -->
+    <section class="story" id="story">
+      <div class="story__inner">
+        <div class="story__art fade-up" aria-hidden="true">
+          <svg
+            viewBox="0 0 460 460"
+            class="story__illustration"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="20"
+              y="20"
+              width="420"
+              height="420"
+              rx="8"
+              fill="var(--forest-green)"
+              fill-opacity="0.06"
+            />
+            <g
+              stroke="var(--forest-green)"
+              stroke-width="1.6"
+              fill="none"
+              stroke-linecap="round"
+            >
+              <circle cx="180" cy="230" r="70" />
+              <circle cx="280" cy="230" r="70" />
+            </g>
+            <g
+              stroke="var(--gold)"
+              stroke-width="1.6"
+              fill="none"
+              stroke-linecap="round"
+            >
+              <path
+                d="M230 150C230 150 220 190 230 230C240 270 230 310 230 310"
+              />
+            </g>
+          </svg>
+        </div>
+
+        <div class="story__text fade-up">
+          <p class="section-kicker">Two people. One botanical vision.</p>
+          <h2 class="section-title">Our Story.</h2>
+          <p class="story__desc">
+            BrySam Botanicals began with Bryan and Samuel, two friends who
+            wanted a botanical brand that felt honest — rooted in Nigerian soil,
+            but built with a modern hand. Morié is where that idea first took
+            shape: a simple infusion, made with real ingredients and real care.
+          </p>
+          <p class="story__desc">
+            What started as a shared conversation about better, simpler brewing
+            has grown into a brand built to last — one cup, one harvest, one
+            season at a time.
+          </p>
+          <a href="#" class="btn btn--outline">Our Story →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       BOTANICAL JOURNAL SECTION
+       Educational article cards
+  ========================================================== -->
+    <section class="journal" id="journal">
+      <div class="journal__inner">
+        <div class="journal__header fade-up">
+          <p class="section-kicker">Learn &amp; brew well</p>
+          <h2 class="section-title">From the Botanicals Journal</h2>
+        </div>
+
+        <div class="journal__grid">
+          <article class="journal-card fade-up">
+            <div class="journal-card__image" aria-hidden="true">
+              <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="300" height="200" fill="var(--cream)" />
+                <g
+                  stroke="var(--forest-green)"
+                  stroke-width="1.6"
+                  fill="none"
+                  stroke-linecap="round"
+                >
+                  <path
+                    d="M150 170C150 170 140 120 150 90C160 60 150 30 150 30"
+                  />
+                  <path d="M150 90C150 90 120 82 108 55" />
+                  <path d="M150 90C150 90 180 82 192 55" />
+                  <path d="M150 130C150 130 122 122 112 98" />
+                  <path d="M150 130C150 130 178 122 188 98" />
+                </g>
+              </svg>
+            </div>
+            <p class="journal-card__category">Botanical Basics</p>
+            <h3 class="journal-card__title">What Is Moringa?</h3>
+            <p class="journal-card__desc">
+              A gentle introduction to the leaf behind Morié, and why it has
+              been valued for generations.
+            </p>
+            <a href="#" class="journal-card__link">Read more →</a>
+          </article>
+
+          <article class="journal-card fade-up">
+            <div class="journal-card__image" aria-hidden="true">
+              <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="300" height="200" fill="var(--cream)" />
+                <ellipse
+                  cx="150"
+                  cy="130"
+                  rx="55"
+                  ry="30"
+                  fill="none"
+                  stroke="var(--forest-green)"
+                  stroke-width="1.6"
+                />
+                <path
+                  d="M105 125C105 125 100 90 150 90C200 90 195 125 195 125"
+                  stroke="var(--forest-green)"
+                  stroke-width="1.6"
+                  fill="none"
+                />
+                <path
+                  d="M150 65C150 65 145 75 150 82C155 75 150 65 150 65"
+                  fill="var(--gold)"
+                />
+              </svg>
+            </div>
+            <p class="journal-card__category">Brewing Guide</p>
+            <h3 class="journal-card__title">
+              How to Brew the Perfect Cup of Morié
+            </h3>
+            <p class="journal-card__desc">
+              Water temperature, steep time, and a few small habits that change
+              the whole cup.
+            </p>
+            <a href="#" class="journal-card__link">Read more →</a>
+          </article>
+
+          <article class="journal-card fade-up">
+            <div class="journal-card__image" aria-hidden="true">
+              <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                <rect width="300" height="200" fill="var(--cream)" />
+                <g
+                  stroke="var(--forest-green)"
+                  stroke-width="1.6"
+                  fill="none"
+                  stroke-linecap="round"
+                >
+                  <circle cx="150" cy="110" r="38" />
+                  <path d="M150 72V60" />
+                  <path
+                    d="M150 60C150 60 142 50 150 42C158 50 150 60 150 60Z"
+                    fill="var(--gold)"
+                    stroke="none"
+                  />
+                </g>
+              </svg>
+            </div>
+            <p class="journal-card__category">Nutrition</p>
+            <h3 class="journal-card__title">
+              Moringa &amp; Everyday Nutrition
+            </h3>
+            <p class="journal-card__desc">
+              How a single leaf fits into a balanced, everyday way of eating and
+              drinking well.
+            </p>
+            <a href="#" class="journal-card__link">Read more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       NEWSLETTER / COMMUNITY SECTION
+       Forest-green email capture, also serves as the Contact anchor
+  ========================================================== -->
+    <section class="newsletter" id="contact">
+      <div class="newsletter__inner">
+        <div class="newsletter__art" aria-hidden="true">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <g
+              stroke="var(--gold)"
+              stroke-width="1.4"
+              fill="none"
+              stroke-linecap="round"
+              opacity="0.6"
+            >
+              <path d="M100 190C100 190 90 130 100 90C110 50 100 10 100 10" />
+              <path d="M100 90C100 90 70 80 58 50" />
+              <path d="M100 90C100 90 130 80 142 50" />
+            </g>
+          </svg>
+        </div>
+
+        <h2 class="newsletter__title fade-up">Stay close to nature.</h2>
+        <p class="newsletter__text fade-up">
+          Join the BrySam Botanicals community for botanical stories, brewing
+          tips and updates from Morié.
+        </p>
+
+        <form class="newsletter__form fade-up" id="newsletterForm">
+          <label for="newsletterEmail" class="sr-only">Email address</label>
+          <input
+            type="email"
+            id="newsletterEmail"
+            name="email"
+            placeholder="Enter your email address"
+            required
+          />
+          <button type="submit" class="btn btn--gold">Join Us</button>
+        </form>
+        <p
+          class="newsletter__note"
+          id="newsletterNote"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </div>
+    </section>
+
+    <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="footer__logo">BrySam Botanicals</span>
+          <p class="footer__tagline">Nature, brewed beautifully.</p>
+        </div>
+
+        <nav class="footer__links" aria-label="Footer navigation">
+          <a href="#home">Home</a>
+          <a href="#morie">Morié</a>
+          <a href="#story">Our Story</a>
+          <a href="#benefits">Benefits</a>
+          <a href="#journal">Journal</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="footer__social">
+          <a href="#" aria-label="BrySam Botanicals on Instagram">Instagram</a>
+          <a href="#" aria-label="BrySam Botanicals on TikTok">TikTok</a>
+          <a href="#" aria-label="Message BrySam Botanicals on WhatsApp"
+            >WhatsApp</a
+          >
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 BrySam Botanicals. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
