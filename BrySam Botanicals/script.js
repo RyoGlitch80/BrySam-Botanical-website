@@ -1,13 +1,3 @@
-/* =============================================================
-   BRYSAM BOTANICALS — SCRIPT.JS
-   Everything here is plain, vanilla JavaScript (no libraries).
-   Sections:
-   1. Navbar background change on scroll
-   2. Mobile menu open/close
-   3. Smooth-scroll + auto-close menu when a link is tapped
-   4. Scroll-triggered fade-up animations
-   5. Newsletter form (front-end only, no backend)
-============================================================= */
 
 /* -------------------------------------------------------------
    1. NAVBAR ON SCROLL
